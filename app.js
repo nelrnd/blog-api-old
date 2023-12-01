@@ -14,8 +14,10 @@ app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 
 const postRouter = require("./routes/post")
+const userRouter = require("./routes/user")
 
 app.get("/", (req, res) => res.json({ message: "Hello World!" }))
 app.use("/posts", postRouter)
+app.use("/users", userRouter)
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`))
