@@ -1,0 +1,26 @@
+{
+  "name": "blog-api",
+  "version": "1.0.0",
+  "description": "A blog API written with Express",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nelrnd/blog-api.git"
+  },
+  "author": "Nel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nelrnd/blog-api/issues"
+  },
+  "homepage": "https://github.com/nelrnd/blog-api#readme",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
