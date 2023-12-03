@@ -1,16 +1,12 @@
 const User = require("../models/user")
 const asyncHandler = require("express-async-handler")
 
-exports.user_create = asyncHandler(async (req, res, next) => {
-  const { username, email, bio } = req.body
-  const user = new User({ username, email, bio })
-  await user.save()
-  res.json(user)
-})
-
 exports.user_detail = asyncHandler(async (req, res, next) => {
   const { userId } = req.params
   const user = await User.findById(userId).exec()
+  if (!user) {
+    return res.status(404).json({ error: "User not found" })
+  }
   res.json(user)
 })
 

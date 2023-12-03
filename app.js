@@ -13,11 +13,12 @@ main().catch((err) => console.error(err))
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 
+const authRouter = require("./routes/auth")
 const userRouter = require("./routes/user")
 const postRouter = require("./routes/post")
 const commentRouter = require("./routes/comment")
 
-app.get("/", (req, res) => res.json({ message: "Hello World!" }))
+app.use("/", authRouter)
 app.use("/users", userRouter)
 app.use("/posts", postRouter)
 app.use("/posts/:postId/comments", commentRouter)
